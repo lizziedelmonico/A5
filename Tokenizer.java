@@ -44,6 +44,7 @@ public class Tokenizer {
         queue.addLast(scanner.next());
       }
     }
+  
     scanner.close();
     return queue;
   }
@@ -51,11 +52,11 @@ public class Tokenizer {
 
 
   /** Run short test */
-  public static void main(String input) {
-    if (input.length() ==0) {
+  public static void main(String[] args) {
+    if (args.length ==0) {
       System.err.println("Usage:  java Tokenizer <expr>");
     } else {
-      ArrayDeque<Object> queue = readTokens(input);
+      ArrayDeque<Object> queue = readTokens(args[0]);
       System.out.println(queue);
     }
   }
