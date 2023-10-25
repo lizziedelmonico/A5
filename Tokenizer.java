@@ -1,3 +1,4 @@
+import java.util.ArrayDeque;
 import java.util.Scanner;
 import java.io.StringReader;
 
@@ -18,8 +19,10 @@ public class Tokenizer {
    *  @param input  the string to convert
    *  @return  the queue of tokens
    */
-  public static void readTokens(String input) {
+  public static ArrayDeque<Object> readTokens(String input) {
+    ArrayDeque<Object> queue = new ArrayDeque<Object>();
     Scanner scanner = new Scanner(new StringReader(input));
+
     // Below is a complicated regular expression that will split the
     // input string at various boundaries.
     scanner.useDelimiter
@@ -32,23 +35,28 @@ public class Tokenizer {
     
     while (scanner.hasNext()) {
       if (scanner.hasNextDouble()) {
-        System.out.println(scanner.nextDouble());
+        queue.addLast(scanner.nextDouble());
       } else if (scanner.hasNext(WORD)) {
-        System.out.println(scanner.next(WORD));
+        queue.addLast(scanner.next(WORD));
       } else if (scanner.hasNext(SYMBOL)) {
-        System.out.println(scanner.next(SYMBOL).charAt(0));
+        queue.addLast(scanner.next(SYMBOL).charAt(0));
       } else {
-        System.out.println(scanner.next());
+        queue.addLast(scanner.next());
       }
     }
+    scanner.close();
+    return queue;
   }
 
+
+
   /** Run short test */
-  public static void main(String[] args) {
-    if (args.length==0) {
+  public static void main(String input) {
+    if (input.length() ==0) {
       System.err.println("Usage:  java Tokenizer <expr>");
     } else {
-      readTokens(args[0]);
+      ArrayDeque<Object> queue = readTokens(input);
+      System.out.println(queue);
     }
   }
 }
