@@ -9,6 +9,5 @@ class Main {
     } else{
       System.out.println("Sorry, your equation is empty :(");
     }
-
   }
 }

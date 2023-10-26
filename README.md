@@ -1,1 +1,4 @@
 # A5
+Reflection:
+
+Despite the impending fear of another L, I am happy to report that this assignment went way better than the last one! Although not perfect, I feel like I put enough time, effort, and some tears into this assignment to make it work. Additionally, I have a way better understanding of how postfix works and also learned a lot about terminal commands. One thing I think I could improve on and learn more about in the future is infix and the Shunting Yard Algorithm as a whole. In general, CSC210 has been much more challenging than the previous courses I've taken in the department, but it's honestly made me love computer science even more. All of the scurrying across campus to get to Office Hours and TA Hours is 100% worth it when I submit my assignment and realized how much I learned from the process. I'm also grateful for the very supportive and collaborative community you have created for this class. :D
